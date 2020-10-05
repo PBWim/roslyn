@@ -642,10 +642,6 @@ try {
     BuildSolution
   }
 
-  if ($ci -and $build -and $msbuildEngine -eq "vs") {
-    SetVisualStudioBootstrapperBuildArgs
-  }
-
   try
   {
     if ($testDesktop -or $testVsi -or $testIOperation) {
