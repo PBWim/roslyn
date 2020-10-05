@@ -88,11 +88,6 @@ stages:
         zipSources: false
       condition: and(succeeded(), in(variables['SignType'], 'test', 'real'))
 
-    - task: MicroBuildOptProfPlugin@5
-      inputs:
-        ShouldSkipOptimize: true
-      displayName: 'Install OptProf Plugin'
-
     - script: eng\cibuild.cmd
                 -configuration $(BuildConfiguration)
                 -officialBuildId $(Build.BuildNumber)
